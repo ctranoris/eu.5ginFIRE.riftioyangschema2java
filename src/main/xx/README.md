@@ -1,0 +1,1 @@
+This package is copied from https://osm.etsi.org/gitweb/?p=osm/SO.git;a=tree;f=models/plugins/yang;h=9802b7d2c2f0189516698e7dfce37f661264c8ca;hb=HEAD
