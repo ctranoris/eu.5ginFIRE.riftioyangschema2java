@@ -1,0 +1,138 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>opendaylight-release</id>
+			<name>opendaylight-release</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>opendaylight-snapshot</id>
+			<name>opendaylight-snapshot</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<repositories>
+		<repository>
+			<id>opendaylight-release</id>
+			<name>opendaylight-release</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
+		</repository>
+		<repository>
+			<id>opendaylight-snapshot</id>
+			<name>opendaylight-snapshot</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+		</repository>
+	</repositories>
+
+	<groupId>eu.5ginFIRE.riftioyangschema2java</groupId>
+	<artifactId>eu.5ginFIRE.riftioyangschema2java</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>eu.5ginFIRE.riftioyangschema2java</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<yangtools.version>1.0.4-Boron-SR4</yangtools.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.opendaylight.yangtools</groupId>
+			<artifactId>yang-binding</artifactId>
+			<version>0.7.4-Lithium-SR4</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.opendaylight.yangtools</groupId>
+				<artifactId>yang-maven-plugin</artifactId>
+				<version>${yangtools.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate-sources</goal>
+						</goals>
+						<configuration>
+							<!-- directory containing yang files to parse and generate code -->
+							<yangFilesRootDir>src/main/yang</yangFilesRootDir>
+							<codeGenerators>
+								<generator>
+									<codeGeneratorClass>
+										org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl
+									</codeGeneratorClass>
+									<!-- directory into which generated files will be placed -->
+									<outputBaseDir>
+										target/generated-sources/sal
+									</outputBaseDir>
+								</generator>
+							</codeGenerators>
+							<!-- if true, plugin will search for yang files also in dependent 
+								projects -->
+							<inspectDependencies>false</inspectDependencies>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.opendaylight.yangtools</groupId>
+						<artifactId>maven-sal-api-gen-plugin</artifactId>
+						<version>0.7.4-Lithium-SR4</version>
+						<type>jar</type>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.opendaylight.yangtools
+										</groupId>
+										<artifactId>
+											yang-maven-plugin
+										</artifactId>
+										<versionRange>
+											[0.5,)
+										</versionRange>
+										<goals>
+											<goal>
+												generate-sources
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>

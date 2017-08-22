@@ -1,0 +1,326 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>opendaylight-release</id>
+			<name>opendaylight-release</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>opendaylight-snapshot</id>
+			<name>opendaylight-snapshot</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+
+	<repositories>
+		<repository>
+			<id>opendaylight-release</id>
+			<name>opendaylight-release</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.release/</url>
+		</repository>
+		<repository>
+			<id>opendaylight-snapshot</id>
+			<name>opendaylight-snapshot</name>
+			<url>http://nexus.opendaylight.org/content/repositories/opendaylight.snapshot/</url>
+		</repository>
+	</repositories>
+
+
+	<parent>
+		<groupId>org.opendaylight.odlparent</groupId>
+		<artifactId>bundle-parent</artifactId>
+		<version>1.7.4-Boron-SR4</version>
+		<relativePath />
+	</parent>
+
+	<groupId>eu.5ginFIRE.riftioyangschema2java</groupId>
+	<artifactId>eu.5ginFIRE.riftioyangschema2java</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>eu.5ginFIRE.riftioyangschema2java</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<yangtools.version>1.0.4-Boron-SR4</yangtools.version>
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.opendaylight.yangtools</groupId>
+				<artifactId>yangtools-artifacts</artifactId>
+				<version>${yangtools.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.opendaylight.mdsal</groupId>
+				<artifactId>mdsal-artifacts</artifactId>
+				<version>2.1.4-Boron-SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.opendaylight.controller</groupId>
+				<artifactId>mdsal-artifacts</artifactId>
+				<version>1.4.4-Boron-SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.opendaylight.mdsal</groupId>
+				<artifactId>mdsal-binding</artifactId>
+				<version>0.9.4-Boron-SR4</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.javassist</groupId>
+			<artifactId>javassist</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-binding-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-binding-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-broker-impl</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-common-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-common-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-core-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.mdsal</groupId>
+			<artifactId>mdsal-binding-generator-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.mdsal</groupId>
+			<artifactId>mdsal-binding-dom-codec</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.yangtools</groupId>
+			<artifactId>yang-data-impl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.opendaylight.yangtools</groupId>
+			<artifactId>yang-model-util</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.truth</groupId>
+			<artifactId>truth</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.opendaylight.controller</groupId>
+			<artifactId>sal-test-model</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.github.romix</groupId>
+			<artifactId>java-concurrent-hash-trie-map</artifactId>
+			<version>0.2.23</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.opendaylight.yangtools</groupId>
+				<artifactId>yang-maven-plugin</artifactId>
+				<version>${yangtools.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate-sources</goal>
+						</goals>
+						<configuration>
+							<!-- directory containing yang files to parse and generate code -->
+							<yangFilesRootDir>src/main/yang</yangFilesRootDir>
+							<codeGenerators>
+								<generator>
+									<codeGeneratorClass>
+										org.opendaylight.yangtools.maven.sal.api.gen.plugin.CodeGeneratorImpl
+									</codeGeneratorClass>
+									<!-- directory into which generated files will be placed -->
+									<outputBaseDir>
+										target/generated-sources/sal
+									</outputBaseDir>
+								</generator>
+							</codeGenerators>
+							<!-- if true, plugin will search for yang files also in dependent 
+								projects -->
+							<inspectDependencies>false</inspectDependencies>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>com.github.romix</groupId>
+						<artifactId>java-concurrent-hash-trie-map</artifactId>
+						<version>0.2.23</version>
+					</dependency>
+					<dependency>
+						<groupId>org.opendaylight.mdsal</groupId>
+						<artifactId>maven-sal-api-gen-plugin</artifactId>
+						<version>0.9.4-Boron-SR4</version>
+					</dependency>
+				
+				</dependencies>
+			</plugin>
+			<plugin>
+               <groupId>org.codehaus.mojo</groupId>
+               <artifactId>build-helper-maven-plugin</artifactId>
+               <executions>
+                   <execution>
+                       <phase>generate-sources</phase>
+                       <goals>
+                           <goal>add-source</goal>
+                       </goals>
+                       <configuration>
+                           <sources>
+                               <source>target/generated-sources/sal</source>
+                           </sources>
+                       </configuration>
+                   </execution>
+               </executions>
+           </plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.opendaylight.yangtools
+										</groupId>
+										<artifactId>
+											yang-maven-plugin
+										</artifactId>
+										<versionRange>
+											[0.5,)
+										</versionRange>
+										<goals>
+											<goal>
+												generate-sources
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-checkstyle-plugin
+										</artifactId>
+										<versionRange>
+											[2.17,)
+										</versionRange>
+										<goals>
+											<goal>check</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											build-helper-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.7,)
+										</versionRange>
+										<goals>
+											<goal>add-source</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>
