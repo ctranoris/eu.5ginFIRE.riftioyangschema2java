@@ -2,6 +2,7 @@ package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import java.util.HashMap;
 
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.DataObject;
@@ -22,6 +23,7 @@ import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Volum
 import java.util.Objects;
 import java.math.BigInteger;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
@@ -429,7 +431,7 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
         return new VduImpl(this);
     }
 
-    private static final class VduImpl implements Vdu {
+    public static final class VduImpl implements Vdu {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.Vdu> getImplementedInterface() {
@@ -438,21 +440,30 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
 
         private final List<Alarm> _alarm;
         private final CloudInitInput _cloudInitInput;
-        private final BigInteger _count;
+        @JsonProperty("count")
+        private final BigInteger _count; 
+        @JsonProperty("description")
         private final java.lang.String _description;
-        private final List<ExternalInterface> _externalInterface;
+        @JsonProperty("external-interface")
+        private final List<ExternalInterface> _externalInterface = new ArrayList<ExternalInterface>();  
+        @JsonProperty("guest-epa")
         private final GuestEpa _guestEpa;
         private final HostEpa _hostEpa;
         private final HypervisorEpa _hypervisorEpa;
+        @JsonProperty("id")
         private final java.lang.String _id;
+        @JsonProperty("image")
         private final java.lang.String _image;
         private final java.lang.String _imageChecksum;
         private final List<InternalConnectionPoint> _internalConnectionPoint;
         private final List<InternalInterface> _internalInterface;
         private final VduKey _key;
         private final java.lang.String _mgmtVpci;
+        @JsonProperty("name")
         private final java.lang.String _name;
-        private final SupplementalBootData _supplementalBootData;
+        @JsonProperty("supplemental-boot-data")
+        private final SupplementalBootData _supplementalBootData; 
+        @JsonProperty("vm-flavor")
         private final VmFlavor _vmFlavor;
         private final List<Volumes> _volumes;
         private final VswitchEpa _vswitchEpa;
@@ -473,7 +484,7 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
             this._cloudInitInput = base.getCloudInitInput();
             this._count = base.getCount();
             this._description = base.getDescription();
-            this._externalInterface = base.getExternalInterface();
+//            this._externalInterface = base.getExternalInterface();
             this._guestEpa = base.getGuestEpa();
             this._hostEpa = base.getHostEpa();
             this._hypervisorEpa = base.getHypervisorEpa();
@@ -500,6 +511,10 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
             }
         }
 
+        public VduImpl(){
+        	this(new VduBuilder() );
+        }
+        
         @Override
         public List<Alarm> getAlarm() {
             return _alarm;

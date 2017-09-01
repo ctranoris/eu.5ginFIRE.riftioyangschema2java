@@ -1,13 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterfaceBuilder.MgmtInterfaceImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParams;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.EndpointType;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Interface over which the VNF is managed.
@@ -55,6 +56,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterfaceBuilder
  *
  */
+@JsonDeserialize(as = MgmtInterfaceImpl.class)
 public interface MgmtInterface
     extends
     ChildOf<VnfdDescriptor>,

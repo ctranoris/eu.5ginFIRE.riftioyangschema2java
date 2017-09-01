@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.Collections;
@@ -154,16 +156,20 @@ public class ExternalInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.
         return new ExternalInterfaceImpl(this);
     }
 
-    private static final class ExternalInterfaceImpl implements ExternalInterface {
+    public static final class ExternalInterfaceImpl implements ExternalInterface {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterface> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterface.class;
         }
 
+        @JsonProperty("key")
         private final ExternalInterfaceKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("virtual-interface")
         private final VirtualInterface _virtualInterface;
+        @JsonProperty("vnfd-connection-point-ref")
         private final java.lang.String _vnfdConnectionPointRef;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterface>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterface>> augmentation = Collections.emptyMap();
@@ -191,6 +197,10 @@ public class ExternalInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public ExternalInterfaceImpl(){
+        	this( new ExternalInterfaceBuilder() );
         }
 
         @Override

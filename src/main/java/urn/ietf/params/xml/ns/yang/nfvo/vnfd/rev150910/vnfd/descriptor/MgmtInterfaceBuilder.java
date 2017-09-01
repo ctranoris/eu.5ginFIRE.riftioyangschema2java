@@ -6,8 +6,13 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParams;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.EndpointType;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.CpBuilder;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.IpBuilder;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.VduIdBuilder;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 
 import java.util.Objects;
@@ -49,6 +54,8 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         }
     }
 
+
+ 
 
     public DashboardParams getDashboardParams() {
         return _dashboardParams;
@@ -113,7 +120,7 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         return new MgmtInterfaceImpl(this);
     }
 
-    private static final class MgmtInterfaceImpl implements MgmtInterface {
+    public static final class MgmtInterfaceImpl implements MgmtInterface {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface> getImplementedInterface() {
@@ -121,7 +128,7 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         }
 
         private final DashboardParams _dashboardParams;
-        private final EndpointType _endpointType;
+        private EndpointType _endpointType;
         private final PortNumber _port;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>> augmentation = Collections.emptyMap();
@@ -143,6 +150,27 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
             }
         }
 
+        public MgmtInterfaceImpl(){
+        	this( new MgmtInterfaceBuilder() );
+        }
+        
+        
+        @JsonProperty("vdu-id")
+        public void setVduidAsEndpointType(String s){
+        	_endpointType = (new VduIdBuilder()).build() ;
+        }
+        
+        @JsonProperty("cp")
+        public void setCPAsEndpointType(String s){
+        	_endpointType = (new CpBuilder()).build() ;
+        }
+        
+        @JsonProperty("ip")
+        public void setIPAsEndpointType(String s){
+        	_endpointType = (new IpBuilder()).build() ;
+        }
+        
+        
         @Override
         public DashboardParams getDashboardParams() {
             return _dashboardParams;

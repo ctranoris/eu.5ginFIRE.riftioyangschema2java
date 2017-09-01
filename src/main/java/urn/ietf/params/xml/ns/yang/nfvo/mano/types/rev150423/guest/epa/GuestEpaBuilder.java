@@ -3,6 +3,7 @@ import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 
 import java.util.HashMap;
 
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.DataObject;
@@ -153,13 +154,14 @@ public class GuestEpaBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo
         return new GuestEpaImpl(this);
     }
 
-    private static final class GuestEpaImpl implements GuestEpa {
+    public static final class GuestEpaImpl implements GuestEpa {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.GuestEpa> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.GuestEpa.class;
         }
 
+        @JsonProperty("cpu-pinning-policy")
         private final CpuPinningPolicy _cpuPinningPolicy;
         private final CpuThreadPinningPolicy _cpuThreadPinningPolicy;
         private final MempageSize _mempageSize;
@@ -187,6 +189,10 @@ public class GuestEpaBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public GuestEpaImpl(){
+        	this ( new GuestEpaBuilder() );
         }
 
         @Override

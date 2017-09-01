@@ -1,8 +1,12 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor;
+import java.math.BigInteger;
+
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
+
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavorBuilder.VmFlavorImpl;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>
@@ -26,6 +30,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavorBuilder
  *
  */
+@JsonDeserialize(as =VmFlavorImpl.class)
 public interface VmFlavor
     extends
     ChildOf<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VmFlavor>,

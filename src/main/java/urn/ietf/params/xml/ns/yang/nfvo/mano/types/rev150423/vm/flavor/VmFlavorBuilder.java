@@ -3,6 +3,8 @@ import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.math.BigInteger;
@@ -156,15 +158,18 @@ public class VmFlavorBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo
         return new VmFlavorImpl(this);
     }
 
-    private static final class VmFlavorImpl implements VmFlavor {
+    public static final class VmFlavorImpl implements VmFlavor {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavor> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavor.class;
         }
 
+        @JsonProperty("memory-mb")
         private final BigInteger _memoryMb;
+        @JsonProperty("storage-gb")
         private final BigInteger _storageGb;
+        @JsonProperty("vcpu-count")
         private final java.lang.Integer _vcpuCount;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavor>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavor>> augmentation = Collections.emptyMap();
@@ -184,6 +189,10 @@ public class VmFlavorBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public VmFlavorImpl(){
+        	this( new VmFlavorBuilder() );
         }
 
         @Override

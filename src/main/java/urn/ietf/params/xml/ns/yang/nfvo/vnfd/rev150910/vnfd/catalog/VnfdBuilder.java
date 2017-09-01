@@ -2,12 +2,14 @@ package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import java.util.HashMap;
 
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor.ServiceFunctionChain;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld;
@@ -18,6 +20,7 @@ import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduDepend
 
 import java.util.Objects;
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Map;
 
@@ -378,29 +381,40 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         return new VnfdImpl(this);
     }
 
-    private static final class VnfdImpl implements Vnfd {
+    public static final class VnfdImpl implements Vnfd {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd.class;
         }
 
-        private final List<ConnectionPoint> _connectionPoint;
+        @JsonProperty("connection-point")
+        private final List<ConnectionPoint> _connectionPoint  = new ArrayList<ConnectionPoint>();  
+        @JsonProperty("description")
         private final java.lang.String _description;
+        @JsonProperty("id")
         private final java.lang.String _id;
-        private final List<InternalVld> _internalVld;
+        private final List<InternalVld> _internalVld  = new ArrayList<InternalVld>(); 
         private final List<IpProfiles> _ipProfiles;
         private final VnfdKey _key;
+        @JsonProperty("logo")
         private final java.lang.String _logo;
+        @JsonProperty("mgmt-interface")        
         private final MgmtInterface _mgmtInterface;
+        @JsonProperty("name")
         private final java.lang.String _name;
         private final List<PlacementGroups> _placementGroups;
+        @JsonProperty("service-function-chain")
         private final ServiceFunctionChain _serviceFunctionChain;
         private final java.lang.String _serviceFunctionType;
+        @JsonProperty("short-name")
         private final java.lang.String _shortName;
-        private final List<Vdu> _vdu;
+        @JsonProperty("vdu")
+        private final List<Vdu> _vdu = new ArrayList<Vdu>();  
         private final List<VduDependency> _vduDependency;
+        @JsonProperty("vendor")
         private final java.lang.String _vendor;
+        @JsonProperty("version")
         private final java.lang.String _version;
         private final VnfConfiguration _vnfConfiguration;
 
@@ -416,9 +430,9 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
                 this._key = base.getKey();
                 this._id = _key.getId();
             }
-            this._connectionPoint = base.getConnectionPoint();
+//            this._connectionPoint = base.getConnectionPoint();
             this._description = base.getDescription();
-            this._internalVld = base.getInternalVld();
+//            this._internalVld = base.getInternalVld();
             this._ipProfiles = base.getIpProfiles();
             this._logo = base.getLogo();
             this._mgmtInterface = base.getMgmtInterface();
@@ -427,7 +441,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             this._serviceFunctionChain = base.getServiceFunctionChain();
             this._serviceFunctionType = base.getServiceFunctionType();
             this._shortName = base.getShortName();
-            this._vdu = base.getVdu();
+//            this._vdu = base.getVdu();
             this._vduDependency = base.getVduDependency();
             this._vendor = base.getVendor();
             this._version = base.getVersion();
@@ -443,6 +457,10 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public VnfdImpl(){
+        	this( new VnfdBuilder() );
         }
 
         @Override

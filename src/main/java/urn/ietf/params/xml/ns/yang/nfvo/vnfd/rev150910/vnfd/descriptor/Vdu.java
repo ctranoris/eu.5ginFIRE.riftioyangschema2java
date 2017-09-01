@@ -1,5 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
+import java.math.BigInteger;
+import java.util.List;
+
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.GuestEpa;
@@ -10,18 +16,13 @@ import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.SupplementalBootDat
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VmFlavor;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VswitchEpa;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduBuilder.VduImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Alarm;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.CloudInitInput;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterface;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.InternalConnectionPoint;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.InternalInterface;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Volumes;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
-
-import java.math.BigInteger;
-import java.util.List;
 
 /**
  * List of Virtual Deployment Units
@@ -398,6 +399,7 @@ import java.util.List;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduKey
  *
  */
+@JsonDeserialize(as = VduImpl.class)
 public interface Vdu
     extends
     ChildOf<VnfdDescriptor>,

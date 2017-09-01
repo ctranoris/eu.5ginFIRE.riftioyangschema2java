@@ -4,7 +4,10 @@ import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdCatalog;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.VnfdBuilder.VnfdImpl;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.Identifiable;
 
@@ -703,6 +706,8 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.VnfdKey
  *
  */
+@JsonDeserialize(as = VnfdImpl.class)
+@JsonIgnoreProperties( {"meta", "forgetThisField"} )
 public interface Vnfd
     extends
     ChildOf<VnfdCatalog>,
