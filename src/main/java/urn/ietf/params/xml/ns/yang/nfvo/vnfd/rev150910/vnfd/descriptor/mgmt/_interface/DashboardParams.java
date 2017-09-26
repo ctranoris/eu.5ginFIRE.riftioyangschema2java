@@ -3,8 +3,11 @@ import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.VnfdBuilder.VnfdImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParamsBuilder.DashboardParamsImpl;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
@@ -31,6 +34,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParamsBuilder
  *
  */
+@JsonDeserialize(as = DashboardParamsImpl.class)
 public interface DashboardParams
     extends
     ChildOf<MgmtInterface>,

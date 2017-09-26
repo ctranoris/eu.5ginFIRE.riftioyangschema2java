@@ -707,7 +707,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  *
  */
 @JsonDeserialize(as = VnfdImpl.class)
-@JsonIgnoreProperties( {"meta", "forgetThisField"} )
+@JsonIgnoreProperties( {"meta", "http-endpoint"} )
 public interface Vnfd
     extends
     ChildOf<VnfdCatalog>,

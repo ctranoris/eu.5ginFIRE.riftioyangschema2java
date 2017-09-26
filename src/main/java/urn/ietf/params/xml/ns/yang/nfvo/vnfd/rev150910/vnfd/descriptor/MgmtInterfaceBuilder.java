@@ -126,9 +126,13 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface.class;
         }
+        
 
+        @JsonProperty("dashboard-params")        
         private final DashboardParams _dashboardParams;
+        @JsonProperty("endpoint-type")        
         private EndpointType _endpointType;
+        @JsonProperty("port")        
         private final PortNumber _port;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>> augmentation = Collections.emptyMap();

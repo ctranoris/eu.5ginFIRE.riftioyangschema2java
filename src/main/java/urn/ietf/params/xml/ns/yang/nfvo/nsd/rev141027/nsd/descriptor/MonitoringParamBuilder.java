@@ -1,6 +1,8 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 
 import java.math.BigDecimal;
@@ -326,7 +328,7 @@ public class MonitoringParamBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new MonitoringParamImpl(this);
     }
 
-    private static final class MonitoringParamImpl implements MonitoringParam {
+    public static final class MonitoringParamImpl implements MonitoringParam {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam> getImplementedInterface() {
@@ -334,19 +336,26 @@ public class MonitoringParamBuilder implements Builder<urn.ietf.params.xml.ns.ya
         }
 
         private final AggregationType _aggregationType;
+        @JsonProperty("description")
         private final java.lang.String _description;
+        @JsonProperty("group-tag")
         private final java.lang.String _groupTag;
+        @JsonProperty("id")
         private final java.lang.String _id;
         private final MonitoringParamKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
         private final NumericConstraints _numericConstraints;
         private final TextConstraints _textConstraints;
+        @JsonProperty("units")
         private final java.lang.String _units;
         private final BigDecimal _valueDecimal;
         private final java.lang.Long _valueInteger;
         private final java.lang.String _valueString;
+        @JsonProperty("value-type")
         private final ParamValueType _valueType;
         private final List<VnfdMonitoringParam> _vnfdMonitoringParam;
+        @JsonProperty("widget-type")
         private final WidgetType _widgetType;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam>> augmentation = Collections.emptyMap();
@@ -387,6 +396,9 @@ public class MonitoringParamBuilder implements Builder<urn.ietf.params.xml.ns.ya
             }
         }
 
+        public MonitoringParamImpl() {
+        	this( new MonitoringParamBuilder() ) ;
+        }
         @Override
         public AggregationType getAggregationType() {
             return _aggregationType;

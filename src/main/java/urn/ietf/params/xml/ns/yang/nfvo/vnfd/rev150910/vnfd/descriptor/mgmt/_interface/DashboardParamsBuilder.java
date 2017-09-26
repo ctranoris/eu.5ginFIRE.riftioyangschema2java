@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.Collections;
@@ -110,14 +112,16 @@ public class DashboardParamsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new DashboardParamsImpl(this);
     }
 
-    private static final class DashboardParamsImpl implements DashboardParams {
+    public static final class DashboardParamsImpl implements DashboardParams {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParams> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParams.class;
         }
 
+        @JsonProperty("path")        
         private final java.lang.String _path;
+        @JsonProperty("port")        
         private final PortNumber _port;
         private final java.lang.Boolean _https;
 
@@ -138,6 +142,10 @@ public class DashboardParamsBuilder implements Builder<urn.ietf.params.xml.ns.ya
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public DashboardParamsImpl() {
+        	this( new DashboardParamsBuilder() );
         }
 
         @Override

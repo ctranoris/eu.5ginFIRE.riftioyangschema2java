@@ -4,9 +4,12 @@ import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInfo.Strategy;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.VnfdBuilder;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.List;
@@ -172,7 +175,7 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new PlacementGroupsImpl(this);
     }
 
-    private static final class PlacementGroupsImpl implements PlacementGroups {
+    public static final class PlacementGroupsImpl implements PlacementGroups {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups> getImplementedInterface() {
@@ -180,9 +183,13 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         }
 
         private final PlacementGroupsKey _key;
+        @JsonProperty("member-vdus")        
         private final List<MemberVdus> _memberVdus;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("requirement")
         private final java.lang.String _requirement;
+        @JsonProperty("strategy")
         private final Strategy _strategy;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups>> augmentation = Collections.emptyMap();
@@ -211,6 +218,12 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        
+
+        public PlacementGroupsImpl(){
+        	this( new PlacementGroupsBuilder() );
         }
 
         @Override

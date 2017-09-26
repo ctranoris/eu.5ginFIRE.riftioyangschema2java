@@ -9,6 +9,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.catalog.NsdBuilder;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor.ServiceFunctionChain;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint;
@@ -50,6 +52,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
     private java.lang.String _vendor;
     private java.lang.String _version;
     private VnfConfiguration _vnfConfiguration;
+    private List<MonitoringParam> _monitoringParam;
 
     Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> augmentation = Collections.emptyMap();
 
@@ -73,6 +76,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         this._placementGroups = arg.getPlacementGroups();
         this._ipProfiles = arg.getIpProfiles();
         this._vnfConfiguration = arg.getVnfConfiguration();
+        this._monitoringParam = arg.getMonitoringParam();
     }
     public VnfdBuilder(urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileList arg) {
         this._ipProfiles = arg.getIpProfiles();
@@ -158,6 +162,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             this._serviceFunctionChain = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getServiceFunctionChain();
             this._serviceFunctionType = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getServiceFunctionType();
             this._placementGroups = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getPlacementGroups();
+            this._monitoringParam = ((urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor)arg).getMonitoringParam();
             isValidArg = true;
         }
         if (!isValidArg) {
@@ -167,7 +172,18 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             );
         }
     }
+    
+    
+    public List<MonitoringParam> getMonitoringParam() {
+        return _monitoringParam;
+    }
 
+    public VnfdBuilder setMonitoringParam(final List<MonitoringParam> value) {
+        this._monitoringParam = value;
+        return this;
+    }
+    
+    
     public List<ConnectionPoint> getConnectionPoint() {
         return _connectionPoint;
     }
@@ -403,6 +419,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         private final MgmtInterface _mgmtInterface;
         @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("placement-groups")
         private final List<PlacementGroups> _placementGroups;
         @JsonProperty("service-function-chain")
         private final ServiceFunctionChain _serviceFunctionChain;
@@ -416,7 +433,10 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         private final java.lang.String _vendor;
         @JsonProperty("version")
         private final java.lang.String _version;
+        @JsonProperty("vnf-configuration")
         private final VnfConfiguration _vnfConfiguration;
+        @JsonProperty("monitoring-param")
+        private final List<MonitoringParam> _monitoringParam;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> augmentation = Collections.emptyMap();
 
@@ -441,6 +461,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             this._serviceFunctionChain = base.getServiceFunctionChain();
             this._serviceFunctionType = base.getServiceFunctionType();
             this._shortName = base.getShortName();
+            this._monitoringParam = base.getMonitoringParam();
 //            this._vdu = base.getVdu();
             this._vduDependency = base.getVduDependency();
             this._vendor = base.getVendor();
@@ -553,6 +574,11 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             return _vnfConfiguration;
         }
         
+        @Override
+        public List<MonitoringParam> getMonitoringParam() {
+            return _monitoringParam;
+        }
+        
         @SuppressWarnings("unchecked")
         @Override
         public <E extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> E getAugmentation(java.lang.Class<E> augmentationType) {
@@ -592,6 +618,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             result = prime * result + Objects.hashCode(_version);
             result = prime * result + Objects.hashCode(_vnfConfiguration);
             result = prime * result + Objects.hashCode(augmentation);
+            result = prime * result + Objects.hashCode(_monitoringParam);
         
             hash = result;
             hashValid = true;
@@ -623,6 +650,9 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
                 return false;
             }
             if (!Objects.equals(_ipProfiles, other.getIpProfiles())) {
+                return false;
+            }
+            if (!Objects.equals(_monitoringParam, other.getMonitoringParam())) {
                 return false;
             }
             if (!Objects.equals(_key, other.getKey())) {
@@ -707,6 +737,11 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             if (_internalVld != null) {
                 builder.append("_internalVld=");
                 builder.append(_internalVld);
+                builder.append(", ");
+            }
+            if (_monitoringParam != null) {
+                builder.append("_monitoringParam=");
+                builder.append(_monitoringParam);
                 builder.append(", ");
             }
             if (_ipProfiles != null) {

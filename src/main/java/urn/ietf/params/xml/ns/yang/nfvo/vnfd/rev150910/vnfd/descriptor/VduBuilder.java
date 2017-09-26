@@ -19,6 +19,8 @@ import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Exter
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.InternalConnectionPoint;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.InternalInterface;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Volumes;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.cloud.init.input.Filename;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.cloud.init.input.FilenameBuilder;
 
 import java.util.Objects;
 import java.math.BigInteger;
@@ -279,6 +281,7 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
         return this;
     }
     
+    
      
      private static final com.google.common.collect.Range<java.math.BigInteger>[] CHECKCOUNTRANGE_RANGES;
      static {
@@ -439,7 +442,8 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
         }
 
         private final List<Alarm> _alarm;
-        private final CloudInitInput _cloudInitInput;
+        
+        private CloudInitInput _cloudInitInput;
         @JsonProperty("count")
         private final BigInteger _count; 
         @JsonProperty("description")
@@ -454,6 +458,7 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
         private final java.lang.String _id;
         @JsonProperty("image")
         private final java.lang.String _image;
+        @JsonProperty("image-checksum")
         private final java.lang.String _imageChecksum;
         private final List<InternalConnectionPoint> _internalConnectionPoint;
         private final List<InternalInterface> _internalInterface;
@@ -614,6 +619,18 @@ public class VduBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnfd
         public VswitchEpa getVswitchEpa() {
             return _vswitchEpa;
         }
+        
+                
+        @JsonProperty("cloud-init-file")
+        public void setCloudInitInputFile(final String value) {
+        	
+        	FilenameBuilder f = new FilenameBuilder();
+        	f.setCloudInitFile(value);
+            this._cloudInitInput = f.build();
+            
+
+        }
+        
         
         @SuppressWarnings("unchecked")
         @Override
