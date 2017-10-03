@@ -330,6 +330,7 @@ public class VldBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
             return urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld.class;
         }
 
+        @JsonProperty("description")
         private final java.lang.String _description;
         @JsonProperty("id")
         private final java.lang.String _id;
@@ -344,7 +345,9 @@ public class VldBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
         private final java.lang.String _shortName;
         @JsonProperty("type")
         private final VirtualLinkType _type;
+        @JsonProperty("vendor")
         private final java.lang.String _vendor;
+        @JsonProperty("version")
         private final java.lang.String _version;        
         @JsonProperty("vnfd-connection-point-ref")
         private final List<VnfdConnectionPointRef> _vnfdConnectionPointRef = new ArrayList<VnfdConnectionPointRef>();

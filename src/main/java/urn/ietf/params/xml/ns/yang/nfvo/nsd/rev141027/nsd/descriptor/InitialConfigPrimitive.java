@@ -4,7 +4,9 @@ import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.InitialConfig;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitiveBuilder.InitialConfigPrimitiveImpl;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.Identifiable;
 
@@ -44,6 +46,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitiveKey
  *
  */
+@JsonDeserialize(as = InitialConfigPrimitiveImpl.class)
 public interface InitialConfigPrimitive
     extends
     ChildOf<NsdDescriptor>,

@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.IpProfileParams;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.Collections;
@@ -154,16 +156,19 @@ public class IpProfilesBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
         return new IpProfilesImpl(this);
     }
 
-    private static final class IpProfilesImpl implements IpProfiles {
+    public static final class IpProfilesImpl implements IpProfiles {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles.class;
         }
 
+        @JsonProperty("description")
         private final java.lang.String _description;
+        @JsonProperty("ip-profile-params")
         private final IpProfileParams _ipProfileParams;
         private final IpProfilesKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles>> augmentation = Collections.emptyMap();
@@ -193,6 +198,10 @@ public class IpProfilesBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
             }
         }
 
+        public IpProfilesImpl() {
+        	this( new IpProfilesBuilder()  );
+        }
+        
         @Override
         public java.lang.String getDescription() {
             return _description;

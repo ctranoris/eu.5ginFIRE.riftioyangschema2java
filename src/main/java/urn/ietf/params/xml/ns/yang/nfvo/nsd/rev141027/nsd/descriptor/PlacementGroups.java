@@ -4,10 +4,12 @@ import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInfo;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroupsBuilder.PlacementGroupsImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfd;
 
 import java.util.List;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.Identifiable;
 
@@ -47,6 +49,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroupsKey
  *
  */
+@JsonDeserialize(as = PlacementGroupsImpl.class)
 public interface PlacementGroups
     extends
     ChildOf<NsdDescriptor>,

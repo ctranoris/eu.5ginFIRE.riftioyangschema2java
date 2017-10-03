@@ -103,7 +103,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  *
  */
 @JsonDeserialize(as = VldImpl.class)
-@JsonIgnoreProperties( {"vim-network-name", "forgetThisField"} )
+@JsonIgnoreProperties( {"vim-network-name", "ip-profile-ref"} )
 public interface Vld
     extends
     ChildOf<NsdDescriptor>,

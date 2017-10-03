@@ -6,11 +6,15 @@ import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpPrefix;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpVersion;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileInfo;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.IpProfileParamsBuilder.IpProfileParamsImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.ip.profile.params.DhcpParams;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.ip.profile.params.DnsServer;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.VldBuilder.VldImpl;
 
 import java.util.List;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
@@ -58,6 +62,8 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.IpProfileParamsBuilder
  *
  */
+@JsonDeserialize(as = IpProfileParamsImpl.class)
+@JsonIgnoreProperties( {"dhcp-params", "subnet-address" } )
 public interface IpProfileParams
     extends
     ChildOf<IpProfileInfo>,

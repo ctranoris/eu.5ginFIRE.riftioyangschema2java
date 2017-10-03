@@ -3,6 +3,8 @@ import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.math.BigInteger;
@@ -134,7 +136,7 @@ public class MemberVnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
         return new MemberVnfdImpl(this);
     }
 
-    private static final class MemberVnfdImpl implements MemberVnfd {
+    public static final class MemberVnfdImpl implements MemberVnfd {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfd> getImplementedInterface() {
@@ -142,7 +144,9 @@ public class MemberVnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
         }
 
         private final MemberVnfdKey _key;
+        @JsonProperty("member-vnf-index-ref")
         private final BigInteger _memberVnfIndexRef;
+        @JsonProperty("vnfd-id-ref")
         private final java.lang.Object _vnfdIdRef;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfd>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfd>> augmentation = Collections.emptyMap();
@@ -169,6 +173,11 @@ public class MemberVnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        
+        public MemberVnfdImpl() {
+        	this( new MemberVnfdBuilder() );
         }
 
         @Override

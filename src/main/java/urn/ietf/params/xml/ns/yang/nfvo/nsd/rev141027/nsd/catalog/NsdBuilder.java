@@ -471,9 +471,11 @@ public class NsdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
         @JsonProperty("description")
         private final java.lang.String _description;
         @JsonProperty("id")
-        private final java.lang.String _id;
+        private final java.lang.String _id;        
+        @JsonProperty("initial-config-primitive")
         private final List<InitialConfigPrimitive> _initialConfigPrimitive;
         private final List<InputParameterXpath> _inputParameterXpath;
+        @JsonProperty("ip-profiles")
         private final List<IpProfiles> _ipProfiles;
         private final NsdKey _key;
         private final List<KeyPair> _keyPair;
@@ -482,6 +484,7 @@ public class NsdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
         private final List<MonitoringParam> _monitoringParam;
         private java.lang.String _name;
         private final List<ParameterPool> _parameterPool;
+        @JsonProperty("placement-groups")
         private final List<PlacementGroups> _placementGroups;
         private final List<ScalingGroupDescriptor> _scalingGroupDescriptor;
         private final List<ServicePrimitive> _servicePrimitive;

@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config.Parameter;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.math.BigInteger;
@@ -193,7 +195,7 @@ public class InitialConfigPrimitiveBuilder implements Builder<urn.ietf.params.xm
         return new InitialConfigPrimitiveImpl(this);
     }
 
-    private static final class InitialConfigPrimitiveImpl implements InitialConfigPrimitive {
+    public static final class InitialConfigPrimitiveImpl implements InitialConfigPrimitive {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitive> getImplementedInterface() {
@@ -201,9 +203,12 @@ public class InitialConfigPrimitiveBuilder implements Builder<urn.ietf.params.xm
         }
 
         private final InitialConfigPrimitiveKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
         private final List<Parameter> _parameter;
+        @JsonProperty("seq")
         private final BigInteger _seq;
+        @JsonProperty("user-defined-script")
         private final java.lang.String _userDefinedScript;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitive>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitive>> augmentation = Collections.emptyMap();
@@ -234,6 +239,9 @@ public class InitialConfigPrimitiveBuilder implements Builder<urn.ietf.params.xm
             }
         }
 
+        public InitialConfigPrimitiveImpl() {
+        	this( new InitialConfigPrimitiveBuilder() );
+        }
         @Override
         public InitialConfigPrimitiveKey getKey() {
             return _key;

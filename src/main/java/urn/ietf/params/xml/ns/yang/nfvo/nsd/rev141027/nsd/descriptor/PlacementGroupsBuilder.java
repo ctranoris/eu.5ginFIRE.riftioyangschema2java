@@ -7,6 +7,8 @@ import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInfo.
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfd;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.List;
@@ -172,7 +174,7 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new PlacementGroupsImpl(this);
     }
 
-    private static final class PlacementGroupsImpl implements PlacementGroups {
+    public static final class PlacementGroupsImpl implements PlacementGroups {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroups> getImplementedInterface() {
@@ -180,9 +182,13 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         }
 
         private final PlacementGroupsKey _key;
+        @JsonProperty("member-vnfd")
         private final List<MemberVnfd> _memberVnfd;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("requirement")
         private final java.lang.String _requirement;
+        @JsonProperty("strategy")
         private final Strategy _strategy;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroups>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroups>> augmentation = Collections.emptyMap();
@@ -213,6 +219,10 @@ public class PlacementGroupsBuilder implements Builder<urn.ietf.params.xml.ns.ya
             }
         }
 
+        public PlacementGroupsImpl(){
+        	this( new PlacementGroupsBuilder() );
+        }
+        
         @Override
         public PlacementGroupsKey getKey() {
             return _key;

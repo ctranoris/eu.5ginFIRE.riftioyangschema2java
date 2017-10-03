@@ -1,13 +1,16 @@
 package urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
+import java.io.Serializable;
 import java.util.Objects;
 
+import org.codehaus.jackson.map.annotate.JsonDeserialize;
+
+@JsonDeserialize
 public class IpAddress
  implements Serializable {
     private static final long serialVersionUID = 3033840439936785623L;
-    private final Ipv4Address _ipv4Address;
-    private final Ipv6Address _ipv6Address;
+    private Ipv4Address _ipv4Address;
+    private Ipv6Address _ipv6Address;
     private char[] _value;
 
 
@@ -23,6 +26,14 @@ public class IpAddress
         this._ipv4Address = null;
     }
     
+    public IpAddress() {
+
+    }
+    
+    public IpAddress(String ip) {
+
+    	this._ipv4Address = new Ipv4Address(ip);
+    }
     /**
      * Constructor provided only for using in JMX. Don't use it for
      * construction new object of this union type.

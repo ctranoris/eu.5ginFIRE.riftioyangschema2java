@@ -11,13 +11,13 @@ public enum IpVersion {
      * The IPv4 protocol as defined in RFC 791.
      *
      */
-    Ipv4(1, "ipv4"),
+    ipv4(1, "ipv4"),
     
     /**
      * The IPv6 protocol as defined in RFC 2460.
      *
      */
-    Ipv6(2, "ipv6")
+    ipv6(2, "ipv6")
     ;
 
     private static final java.util.Map<java.lang.Integer, IpVersion> VALUE_MAP;
