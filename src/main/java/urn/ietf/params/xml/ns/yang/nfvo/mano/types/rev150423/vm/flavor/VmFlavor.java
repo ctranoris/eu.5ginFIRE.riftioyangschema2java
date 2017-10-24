@@ -1,10 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor;
 import java.math.BigInteger;
 
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vm.flavor.VmFlavorBuilder.VmFlavorImpl;
 

@@ -1,14 +1,17 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.catalog;
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-
-import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-import org.codehaus.jackson.annotate.JsonProperty;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.input.parameter.xpath.InputParameterXpath;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles;
@@ -25,9 +28,6 @@ import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.User;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.VnfDependency;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vnffgd;
-
-import java.util.Objects;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.catalog.Nsd} instances.

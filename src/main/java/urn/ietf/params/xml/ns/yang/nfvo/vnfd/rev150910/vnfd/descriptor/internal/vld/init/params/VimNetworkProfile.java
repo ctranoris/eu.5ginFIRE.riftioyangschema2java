@@ -1,10 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.init.params;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.InitParams;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>vnfd</b>

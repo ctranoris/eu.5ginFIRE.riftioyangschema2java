@@ -1,21 +1,20 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-
+import java.math.BigInteger;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715.Uuid;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VirtualLinkType;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.provider.network.ProviderNetwork;
 import urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog.vld.VnfdConnectionPointRef;
-
-import java.util.Objects;
-import java.math.BigInteger;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog.Vld} instances.

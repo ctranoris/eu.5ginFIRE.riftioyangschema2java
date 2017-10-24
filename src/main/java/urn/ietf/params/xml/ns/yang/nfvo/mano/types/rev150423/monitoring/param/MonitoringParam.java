@@ -1,14 +1,13 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.JsonQueryMethod;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParamUiData;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParamValue;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param.monitoring.param.JsonQueryParams;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of monitoring parameters at the network service level

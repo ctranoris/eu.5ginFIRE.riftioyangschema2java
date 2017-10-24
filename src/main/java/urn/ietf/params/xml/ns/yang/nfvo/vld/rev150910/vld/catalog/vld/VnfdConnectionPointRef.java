@@ -1,12 +1,12 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog.vld;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog.Vld;
-
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * A list of references to connection points.

@@ -1,9 +1,10 @@
 package urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715 ;
-import org.opendaylight.yangtools.yang.binding.YangModuleInfo;
-import java.util.Set;
-import java.util.Collections;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.Collections;
+import java.util.Set;
+
+import org.opendaylight.yangtools.yang.binding.YangModuleInfo;
 public final class $YangModuleInfoImpl implements YangModuleInfo {
 
     private static final YangModuleInfo INSTANCE = new $YangModuleInfoImpl();

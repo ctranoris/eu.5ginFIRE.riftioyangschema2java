@@ -1,15 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileInfo;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileList;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfilesBuilder.IpProfilesImpl;
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.catalog.NsdBuilder.NsdImpl;
-
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of IP Profiles. IP Profile describes the IP characteristics for the 

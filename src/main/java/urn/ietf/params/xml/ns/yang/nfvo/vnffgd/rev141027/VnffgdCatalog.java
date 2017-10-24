@@ -1,12 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnffgd.rev141027;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnffgd.rev141027.vnffgd.catalog.Vnffgd;
-
-import java.util.List;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>vnffgd</b>

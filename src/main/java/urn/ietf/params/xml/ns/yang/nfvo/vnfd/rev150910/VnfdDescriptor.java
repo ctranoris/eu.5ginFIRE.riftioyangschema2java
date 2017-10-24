@@ -1,4 +1,6 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910;
+import java.util.List;
+
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
@@ -11,8 +13,6 @@ import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInter
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.Vdu;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduDependency;
-
-import java.util.List;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>vnfd</b>

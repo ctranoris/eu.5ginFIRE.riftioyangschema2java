@@ -1,9 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-
+import java.math.BigInteger;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.HostEpa.CpuArch;
@@ -11,12 +16,6 @@ import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.HostEpa.Cp
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.HostEpa.CpuVendor;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa.CpuFeature;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa.OmCpuFeature;
-
-import java.util.Objects;
-import java.math.BigInteger;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.HostEpa} instances.

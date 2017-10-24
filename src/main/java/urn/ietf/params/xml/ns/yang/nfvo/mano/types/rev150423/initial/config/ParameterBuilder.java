@@ -1,12 +1,15 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-import java.util.Objects;
-import java.util.Collections;
-import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config.Parameter} instances.
@@ -114,7 +117,7 @@ public class ParameterBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfv
         return new ParameterImpl(this);
     }
 
-    private static final class ParameterImpl implements Parameter {
+    public static final class ParameterImpl implements Parameter {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config.Parameter> getImplementedInterface() {
@@ -122,7 +125,9 @@ public class ParameterBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfv
         }
 
         private final ParameterKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("value")
         private final java.lang.String _value;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config.Parameter>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.initial.config.Parameter>> augmentation = Collections.emptyMap();
@@ -151,6 +156,9 @@ public class ParameterBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfv
             }
         }
 
+        public ParameterImpl() {
+        	this ( new ParameterBuilder());
+        }
         @Override
         public ParameterKey getKey() {
             return _key;

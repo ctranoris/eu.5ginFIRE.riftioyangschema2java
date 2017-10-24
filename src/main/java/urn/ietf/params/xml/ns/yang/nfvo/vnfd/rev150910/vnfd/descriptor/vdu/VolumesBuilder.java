@@ -1,18 +1,18 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
+import java.math.BigInteger;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VolumeInfo.DeviceBus;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VolumeInfo.DeviceType;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.volume.info.VolumeSource;
-
-import java.util.Objects;
-import java.math.BigInteger;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.Volumes} instances.

@@ -3,7 +3,7 @@ import java.beans.ConstructorProperties;
 import java.io.Serializable;
 import java.util.Objects;
 
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonDeserialize
 public class IpAddress

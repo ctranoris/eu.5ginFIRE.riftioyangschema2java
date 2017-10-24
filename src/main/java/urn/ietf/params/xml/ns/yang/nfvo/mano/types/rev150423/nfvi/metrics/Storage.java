@@ -1,12 +1,12 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.nfvi.metrics;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.NfviMetrics;
-
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import java.math.BigDecimal;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>

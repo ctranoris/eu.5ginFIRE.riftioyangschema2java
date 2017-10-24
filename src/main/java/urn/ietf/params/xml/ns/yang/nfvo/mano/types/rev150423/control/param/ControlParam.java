@@ -1,15 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.control.param;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.Uri;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.HttpMethod;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.WidgetType;
-
-import java.math.BigInteger;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of control parameters to manage and update the running configuration of 

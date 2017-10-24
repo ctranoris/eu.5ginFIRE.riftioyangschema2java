@@ -1,14 +1,13 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vld;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld;
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.VldBuilder.VldImpl;
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vld.VnfdConnectionPointRefBuilder.VnfdConnectionPointRefImpl;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vld.VnfdConnectionPointRefBuilder.VnfdConnectionPointRefImpl;
 
 /**
  * A list of references to connection points.

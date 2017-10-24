@@ -1,11 +1,12 @@
 package urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715;
-import java.util.regex.Pattern;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
-import com.google.common.collect.ImmutableList;
-import com.google.common.base.Preconditions;
-import java.util.Objects;
+import java.io.Serializable;
 import java.util.List;
+import java.util.Objects;
+import java.util.regex.Pattern;
+
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 
 /**
  * A Universally Unique IDentifier in the string representation

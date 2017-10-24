@@ -1,7 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.provider.network;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Container for the provider network.

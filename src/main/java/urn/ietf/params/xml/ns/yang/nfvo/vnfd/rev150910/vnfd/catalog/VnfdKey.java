@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog;
-import org.opendaylight.yangtools.yang.binding.Identifier;
 import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class VnfdKey
  implements Identifier<Vnfd> {

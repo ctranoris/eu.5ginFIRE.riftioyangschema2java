@@ -1,11 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd;
-
-import java.util.List;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Virtual Network Function Descriptor (VNFD).

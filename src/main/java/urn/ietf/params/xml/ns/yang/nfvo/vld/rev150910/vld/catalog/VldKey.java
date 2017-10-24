@@ -1,9 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vld.rev150910.vld.catalog;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.yang.binding.Identifier;
 
 import urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715.Uuid;
-
-import java.util.Objects;
 
 public class VldKey
  implements Identifier<Vld> {
