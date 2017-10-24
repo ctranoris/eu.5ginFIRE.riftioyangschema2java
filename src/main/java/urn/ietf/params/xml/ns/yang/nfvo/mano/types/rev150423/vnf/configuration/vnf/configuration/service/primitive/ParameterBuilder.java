@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ParameterDataType;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 
 import java.util.Objects;
@@ -215,20 +217,27 @@ public class ParameterBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfv
         return new ParameterImpl(this);
     }
 
-    private static final class ParameterImpl implements Parameter {
+    public static final class ParameterImpl implements Parameter {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter.class;
         }
 
+        @JsonProperty("data-type")        
         private final ParameterDataType _dataType;
+        @JsonProperty("default-value")        
         private final java.lang.String _defaultValue;
         private final ParameterKey _key;
+        @JsonProperty("name")        
         private final java.lang.String _name;
+        @JsonProperty("parameter-pool")        
         private final java.lang.String _parameterPool;
+        @JsonProperty("hidden")        
         private final java.lang.Boolean _hidden;
+        @JsonProperty("mandatory")        
         private final java.lang.Boolean _mandatory;
+        @JsonProperty("read-only")        
         private final java.lang.Boolean _readOnly;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter>> augmentation = Collections.emptyMap();
@@ -262,6 +271,9 @@ public class ParameterBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfv
             }
         }
 
+        public ParameterImpl() {
+        	this( new ParameterBuilder() );
+        }
         @Override
         public ParameterDataType getDataType() {
             return _dataType;

@@ -30,7 +30,11 @@ public class PortNumber
     }
 
     @ConstructorProperties("value")
-    public PortNumber(java.lang.Integer _value) {
+    public PortNumber(java.lang.String v) {
+    	
+    	java.lang.Integer _value = java.lang.Integer.valueOf( v );
+    	
+    	
         if (_value != null) {
             check_valueRange(_value);
             }
@@ -52,7 +56,7 @@ public class PortNumber
     }
 
     public static PortNumber getDefaultInstance(String defaultValue) {
-        return new PortNumber(java.lang.Integer.valueOf(defaultValue));
+        return new PortNumber( defaultValue );
     }
 
     public java.lang.Integer getValue() {

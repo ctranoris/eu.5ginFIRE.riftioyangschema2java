@@ -6,6 +6,8 @@ import org.opendaylight.yangtools.yang.binding.DataObject;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter;
 
 import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
 import org.opendaylight.yangtools.concepts.Builder;
 import java.util.Objects;
 import java.util.List;
@@ -118,7 +120,7 @@ public class ServicePrimitiveBuilder implements Builder<urn.ietf.params.xml.ns.y
         return new ServicePrimitiveImpl(this);
     }
 
-    private static final class ServicePrimitiveImpl implements ServicePrimitive {
+    public static final class ServicePrimitiveImpl implements ServicePrimitive {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitive> getImplementedInterface() {
@@ -126,7 +128,9 @@ public class ServicePrimitiveBuilder implements Builder<urn.ietf.params.xml.ns.y
         }
 
         private final ServicePrimitiveKey _key;
+        @JsonProperty("name")        
         private final java.lang.String _name;
+        @JsonProperty("parameter")        
         private final List<Parameter> _parameter;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitive>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitive>> augmentation = Collections.emptyMap();
@@ -153,6 +157,10 @@ public class ServicePrimitiveBuilder implements Builder<urn.ietf.params.xml.ns.y
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public ServicePrimitiveImpl() {
+        	this( new ServicePrimitiveBuilder() );
         }
 
         @Override

@@ -144,7 +144,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  *
  */
 @JsonDeserialize(as = VnfConfigurationImpl.class)
-@JsonIgnoreProperties( {"config-attributes", "script", "initial-config-primitive"} )
+@JsonIgnoreProperties( {"config-attributes", "script", "juju", "initial-config-primitive"} )
 public interface VnfConfiguration
     extends
     ChildOf<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VnfConfiguration>,

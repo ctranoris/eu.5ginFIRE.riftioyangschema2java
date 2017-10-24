@@ -167,6 +167,7 @@ public class VnfConfigurationBuilder implements Builder<urn.ietf.params.xml.ns.y
         @JsonProperty("config-template")        
         private final java.lang.String _configTemplate;
         private final List<InitialConfigPrimitive> _initialConfigPrimitive;
+        @JsonProperty("service-primitive")        
         private final List<ServicePrimitive> _servicePrimitive;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration>> augmentation = Collections.emptyMap();
