@@ -38,6 +38,9 @@ public class PortNumber
     public PortNumber() {
     	_value = "";
     }
+    public PortNumber(java.lang.Integer v) {
+    	this._value = v+"";
+    }
     //@ConstructorProperties("value")
     public PortNumber(String v) {
     	
