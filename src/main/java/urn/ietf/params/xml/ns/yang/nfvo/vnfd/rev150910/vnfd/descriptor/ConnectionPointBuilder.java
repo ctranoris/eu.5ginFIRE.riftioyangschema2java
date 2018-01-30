@@ -205,6 +205,7 @@ public class ConnectionPointBuilder implements Builder<urn.ietf.params.xml.ns.ya
         private final java.lang.String _shortName;
         @JsonProperty("type")
         private final ConnectionPointType _type;
+        @JsonProperty("port-security-enabled")
         private final java.lang.Boolean _portSecurityEnabled;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint>> augmentation = Collections.emptyMap();
