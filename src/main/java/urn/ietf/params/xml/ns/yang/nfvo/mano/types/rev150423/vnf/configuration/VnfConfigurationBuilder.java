@@ -160,6 +160,8 @@ public class VnfConfigurationBuilder implements Builder<urn.ietf.params.xml.ns.y
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration.class;
         }
 
+
+        @JsonProperty("config-access")        
         private final ConfigAccess _configAccess;
         private final ConfigAttributes _configAttributes;
         private final ConfigMethod _configMethod;
