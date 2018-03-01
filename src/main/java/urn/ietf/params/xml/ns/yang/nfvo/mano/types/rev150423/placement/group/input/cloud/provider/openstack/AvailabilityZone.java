@@ -1,10 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.placement.group.input.cloud.provider.openstack;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInput;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Name of the Availability Zone

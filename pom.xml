@@ -33,13 +33,6 @@
 	</repositories>
 
 
-	<parent>
-		<groupId>org.opendaylight.odlparent</groupId>
-		<artifactId>bundle-parent</artifactId>
-		<version>2.0.4</version>
-		<relativePath />
-	</parent>
-
 	<groupId>eu.5ginFIRE.riftioyangschema2java</groupId>
 	<artifactId>eu.5ginFIRE.riftioyangschema2java</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -50,10 +43,10 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<yangtools.version>2.0.0-SNAPSHOT</yangtools.version>
+		<yangtools.version>2.0.2-SNAPSHOT</yangtools.version>
 		<mdsal.version>2.4.0-SNAPSHOT</mdsal.version>
 		<mdsalmodel.version>0.12.0-SNAPSHOT</mdsalmodel.version>
-		<jackson.version>1.9.4</jackson.version>
+		<jackson.version>2.8.7</jackson.version>
 	</properties>
 
 
@@ -88,26 +81,23 @@
 		<dependency>
 			<groupId>org.opendaylight.yangtools</groupId>
 			<artifactId>yang-maven-plugin</artifactId>
+				<version>${yangtools.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.opendaylight.mdsal</groupId>
 			<artifactId>yang-binding</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-core-asl</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-mapper-asl</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.jackson</groupId>
-			<artifactId>jackson-jaxrs</artifactId>
-			<version>${jackson.version}</version>
-		</dependency>
+		
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+				<version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -123,6 +113,8 @@
 			</resource>
 		</resources>
 		<plugins>
+		
+		<!-- 
 			<plugin>
 				<groupId>org.opendaylight.yangtools</groupId>
 				<artifactId>yang-maven-plugin</artifactId>
@@ -133,21 +125,21 @@
 							<goal>generate-sources</goal>
 						</goals>
 						<configuration>
-							<!-- directory containing yang files to parse and generate code -->
+							 directory containing yang files to parse and generate code 
 							<yangFilesRootDir>src/main/yang</yangFilesRootDir>
 							<codeGenerators>
 								<generator>
 									<codeGeneratorClass>
 										org.opendaylight.mdsal.binding.maven.api.gen.plugin.CodeGeneratorImpl
 									</codeGeneratorClass>
-									<!-- directory into which generated files will be placed -->
+									directory into which generated files will be placed 
 									<outputBaseDir>
 										target/generated-sources/sal
 									</outputBaseDir>
 								</generator>
 							</codeGenerators>
-							<!-- if true, plugin will search for yang files also in dependent 
-								projects -->
+							if true, plugin will search for yang files also in dependent 
+								projects 
 							<inspectDependencies>false</inspectDependencies>
 						</configuration>
 					</execution>
@@ -166,9 +158,11 @@
 
 				</dependencies>
 			</plugin>
+			 -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.0.0</version>
 				<executions>
 					<execution>
 						<phase>generate-sources</phase>
@@ -188,6 +182,14 @@
 			<plugins>
 				<!--This plugin's configuration is used to store Eclipse m2e settings 
 					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>

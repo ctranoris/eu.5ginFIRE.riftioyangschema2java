@@ -1,11 +1,10 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.guest.epa.numa.policy;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.guest.epa.NumaPolicy;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.guest.epa.numa.policy.numa.aware.NumaNodePolicy;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>

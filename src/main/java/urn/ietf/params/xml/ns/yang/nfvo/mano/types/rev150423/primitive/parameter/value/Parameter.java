@@ -1,11 +1,10 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.primitive.parameter.value;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PrimitiveParameterValue;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of parameters to the configuration primitive.

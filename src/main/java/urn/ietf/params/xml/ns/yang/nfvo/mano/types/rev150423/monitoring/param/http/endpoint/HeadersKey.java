@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param.http.endpoint;
-import org.opendaylight.yangtools.yang.binding.Identifier;
 import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class HeadersKey
  implements Identifier<Headers> {

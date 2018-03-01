@@ -1,8 +1,9 @@
 package urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
-import com.google.common.base.Preconditions;
+import java.io.Serializable;
 import java.util.Objects;
+
+import com.google.common.base.Preconditions;
 
 /**
  * The dscp type represents a Differentiated Services Code Point

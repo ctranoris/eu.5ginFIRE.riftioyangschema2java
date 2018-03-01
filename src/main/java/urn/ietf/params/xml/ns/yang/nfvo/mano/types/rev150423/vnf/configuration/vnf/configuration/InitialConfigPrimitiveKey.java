@@ -1,7 +1,8 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration;
-import org.opendaylight.yangtools.yang.binding.Identifier;
-import java.util.Objects;
 import java.math.BigInteger;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class InitialConfigPrimitiveKey
  implements Identifier<InitialConfigPrimitive> {

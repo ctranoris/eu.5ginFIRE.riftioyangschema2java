@@ -1,12 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.InitialConfig;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitiveBuilder.InitialConfigPrimitiveImpl;
 
 /**
  * Initial set of configuration primitives for NSD.
@@ -44,6 +46,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.InitialConfigPrimitiveKey
  *
  */
+@JsonDeserialize(as = InitialConfigPrimitiveImpl.class)
 public interface InitialConfigPrimitive
     extends
     ChildOf<NsdDescriptor>,

@@ -1,10 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.EndpointType;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Use the default management interface on this VDU.

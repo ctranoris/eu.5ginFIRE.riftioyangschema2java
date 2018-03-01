@@ -1,13 +1,16 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
-import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
-import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.util.List;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitiveBuilder.ServicePrimitiveImpl;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.service.primitive.Parameter;
 
 /**
  * List of service primitives supported by the configuration agent for this VNF.
@@ -54,6 +57,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitiveKey
  *
  */
+@JsonDeserialize(as = ServicePrimitiveImpl.class)
 public interface ServicePrimitive
     extends
     ChildOf<VnfConfiguration>,

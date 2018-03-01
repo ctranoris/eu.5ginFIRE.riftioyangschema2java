@@ -1,16 +1,15 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.HttpMethod;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParam;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param.http.endpoint.Headers;
-
-import java.util.List;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of http endpoints to be used by monitoring params

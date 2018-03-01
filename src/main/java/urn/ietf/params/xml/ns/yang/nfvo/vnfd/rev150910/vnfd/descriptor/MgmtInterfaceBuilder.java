@@ -1,18 +1,22 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParams;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.EndpointType;
-
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-
-import java.util.Objects;
-import java.util.Collections;
-import java.util.Map;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.CpBuilder;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.IpBuilder;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.endpoint.type.VduIdBuilder;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface} instances.
@@ -49,6 +53,8 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         }
     }
 
+
+ 
 
     public DashboardParams getDashboardParams() {
         return _dashboardParams;
@@ -113,15 +119,19 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
         return new MgmtInterfaceImpl(this);
     }
 
-    private static final class MgmtInterfaceImpl implements MgmtInterface {
+    public static final class MgmtInterfaceImpl implements MgmtInterface {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface.class;
         }
+        
 
+        @JsonProperty("dashboard-params")        
         private final DashboardParams _dashboardParams;
-        private final EndpointType _endpointType;
+        @JsonProperty("endpoint-type")        
+        private EndpointType _endpointType;
+        @JsonProperty("port")        
         private final PortNumber _port;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface>> augmentation = Collections.emptyMap();
@@ -143,6 +153,27 @@ public class MgmtInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.yang
             }
         }
 
+        public MgmtInterfaceImpl(){
+        	this( new MgmtInterfaceBuilder() );
+        }
+        
+        
+        @JsonProperty("vdu-id")
+        public void setVduidAsEndpointType(String s){
+        	_endpointType = (new VduIdBuilder()).build() ;
+        }
+        
+        @JsonProperty("cp")
+        public void setCPAsEndpointType(String s){
+        	_endpointType = (new CpBuilder()).build() ;
+        }
+        
+        @JsonProperty("ip")
+        public void setIPAsEndpointType(String s){
+        	_endpointType = (new IpBuilder()).build() ;
+        }
+        
+        
         @Override
         public DashboardParams getDashboardParams() {
             return _dashboardParams;

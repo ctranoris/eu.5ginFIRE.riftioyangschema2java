@@ -1,8 +1,9 @@
 package urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
-import com.google.common.base.Preconditions;
+import java.io.Serializable;
 import java.math.BigInteger;
+
+import com.google.common.base.Preconditions;
 
 /**
  * The zero-based-counter64 type represents a counter64 that

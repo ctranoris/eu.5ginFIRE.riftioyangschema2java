@@ -1,13 +1,13 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa;
+import java.math.BigInteger;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa.CpuFeature;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa.OmCpuFeature;
-
-import java.math.BigInteger;
-import java.util.List;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Specifies the host level EPA attributes.

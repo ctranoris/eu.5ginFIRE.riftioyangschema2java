@@ -1,12 +1,15 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroups;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.PlacementGroups;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfdBuilder.MemberVnfdImpl;
 
 /**
  * List of VNFDs that are part of this placement group
@@ -31,6 +34,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.placement.groups.MemberVnfdKey
  *
  */
+@JsonDeserialize(as = MemberVnfdImpl.class)
 public interface MemberVnfd
     extends
     ChildOf<PlacementGroups>,

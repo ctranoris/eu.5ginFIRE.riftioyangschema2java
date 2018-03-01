@@ -1,20 +1,22 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
+import java.math.BigInteger;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VirtualLinkType;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.provider.network.ProviderNetwork;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.InitParams;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.InternalConnectionPoint;
-
-import java.util.Objects;
-import java.math.BigInteger;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld} instances.
@@ -281,14 +283,16 @@ public class InternalVldBuilder implements Builder<urn.ietf.params.xml.ns.yang.n
         return new InternalVldImpl(this);
     }
 
-    private static final class InternalVldImpl implements InternalVld {
+    public static final class InternalVldImpl implements InternalVld {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld.class;
         }
-
-        private final java.lang.String _description;
+        
+        @JsonProperty("description")
+        private final java.lang.String _description; 
+        @JsonProperty("id")
         private final java.lang.String _id;
         private final InitParams _initParams;
         private final List<InternalConnectionPoint> _internalConnectionPoint;
@@ -334,6 +338,9 @@ public class InternalVldBuilder implements Builder<urn.ietf.params.xml.ns.yang.n
             }
         }
 
+        public InternalVldImpl(){
+        	this( new InternalVldBuilder() );
+        }
         @Override
         public java.lang.String getDescription() {
             return _description;

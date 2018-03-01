@@ -1,11 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfigurationBuilder.VnfConfigurationImpl;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccessBuilder.ConfigAccessImpl;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>
@@ -29,6 +32,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccessBuilder
  *
  */
+@JsonDeserialize(as = ConfigAccessImpl.class)
 public interface ConfigAccess
     extends
     ChildOf<VnfConfiguration>,

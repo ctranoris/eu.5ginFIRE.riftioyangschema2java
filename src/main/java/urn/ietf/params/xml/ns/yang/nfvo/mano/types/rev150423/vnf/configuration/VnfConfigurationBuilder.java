@@ -1,21 +1,22 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAttributes;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigMethod;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.InitialConfigPrimitive;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ServicePrimitive;
-
-import java.util.Objects;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration} instances.
@@ -152,18 +153,22 @@ public class VnfConfigurationBuilder implements Builder<urn.ietf.params.xml.ns.y
         return new VnfConfigurationImpl(this);
     }
 
-    private static final class VnfConfigurationImpl implements VnfConfiguration {
+    public static final class VnfConfigurationImpl implements VnfConfiguration {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration.class;
         }
 
+
+        @JsonProperty("config-access")        
         private final ConfigAccess _configAccess;
         private final ConfigAttributes _configAttributes;
         private final ConfigMethod _configMethod;
+        @JsonProperty("config-template")        
         private final java.lang.String _configTemplate;
         private final List<InitialConfigPrimitive> _initialConfigPrimitive;
+        @JsonProperty("service-primitive")        
         private final List<ServicePrimitive> _servicePrimitive;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration>> augmentation = Collections.emptyMap();
@@ -188,6 +193,9 @@ public class VnfConfigurationBuilder implements Builder<urn.ietf.params.xml.ns.y
             }
         }
 
+        public VnfConfigurationImpl() {
+        	this( new VnfConfigurationBuilder());
+        }
         @Override
         public ConfigAccess getConfigAccess() {
             return _configAccess;

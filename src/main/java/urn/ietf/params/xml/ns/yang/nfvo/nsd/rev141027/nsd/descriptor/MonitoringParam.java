@@ -1,17 +1,20 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParamAggregation;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParamUiData;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.MonitoringParamValue;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParamBuilder.MonitoringParamImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.monitoring.param.VnfdMonitoringParam;
-
-import java.util.List;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of monitoring parameters from VNFs that should be propogated up into NSR
@@ -95,6 +98,8 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParamKey
  *
  */
+@JsonIgnoreProperties( {"http-endpoint-ref", "json-query-method"} )
+@JsonDeserialize(as = MonitoringParamImpl.class)
 public interface MonitoringParam
     extends
     ChildOf<NsdDescriptor>,

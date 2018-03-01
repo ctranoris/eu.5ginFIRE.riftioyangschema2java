@@ -1,19 +1,18 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.HttpMethod;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param.http.endpoint.Headers;
-
-import java.util.Objects;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.monitoring.param.HttpEndpoint} instances.

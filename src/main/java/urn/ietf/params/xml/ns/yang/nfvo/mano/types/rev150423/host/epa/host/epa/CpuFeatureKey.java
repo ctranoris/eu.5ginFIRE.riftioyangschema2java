@@ -1,9 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.yang.binding.Identifier;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.CpuFeatureType;
-
-import java.util.Objects;
 
 public class CpuFeatureKey
  implements Identifier<CpuFeature> {

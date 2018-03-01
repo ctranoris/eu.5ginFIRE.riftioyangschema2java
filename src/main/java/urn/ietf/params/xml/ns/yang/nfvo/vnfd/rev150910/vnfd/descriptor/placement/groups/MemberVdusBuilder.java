@@ -1,12 +1,15 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-import java.util.Objects;
-import java.util.Collections;
-import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus} instances.
@@ -102,14 +105,15 @@ public class MemberVdusBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
         return new MemberVdusImpl(this);
     }
 
-    private static final class MemberVdusImpl implements MemberVdus {
+    public static final class MemberVdusImpl implements MemberVdus {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus.class;
         }
 
-        private final MemberVdusKey _key;
+        private final MemberVdusKey _key;        
+        @JsonProperty("member-vdu-ref")        
         private final java.lang.String _memberVduRef;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus>> augmentation = Collections.emptyMap();
@@ -135,6 +139,13 @@ public class MemberVdusBuilder implements Builder<urn.ietf.params.xml.ns.yang.nf
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        
+        
+
+        public MemberVdusImpl(){
+        	this( new MemberVdusBuilder() );
         }
 
         @Override

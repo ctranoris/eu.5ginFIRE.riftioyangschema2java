@@ -1,21 +1,22 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpPrefix;
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpVersion;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.ip.profile.params.DhcpParams;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.ip.profile.params.DnsServer;
-
-import java.util.Objects;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.IpProfileParams} instances.
@@ -164,7 +165,7 @@ public class IpProfileParamsBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new IpProfileParamsImpl(this);
     }
 
-    private static final class IpProfileParamsImpl implements IpProfileParams {
+    public static final class IpProfileParamsImpl implements IpProfileParams {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.IpProfileParams> getImplementedInterface() {
@@ -173,8 +174,11 @@ public class IpProfileParamsBuilder implements Builder<urn.ietf.params.xml.ns.ya
 
         private final DhcpParams _dhcpParams;
         private final List<DnsServer> _dnsServer;
+        @JsonProperty("gateway-address")
         private final IpAddress _gatewayAddress;
+        @JsonProperty("ip-version")
         private final IpVersion _ipVersion;
+        @JsonProperty("security-group")
         private final java.lang.String _securityGroup;
         private final IpPrefix _subnetAddress;
         private final java.lang.String _subnetPrefixPool;
@@ -202,6 +206,11 @@ public class IpProfileParamsBuilder implements Builder<urn.ietf.params.xml.ns.ya
             }
         }
 
+        public IpProfileParamsImpl() {
+        	this( new IpProfileParamsBuilder() );
+        }
+        
+        
         @Override
         public DhcpParams getDhcpParams() {
             return _dhcpParams;

@@ -1,15 +1,18 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
-import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-import java.util.Objects;
-import java.util.Collections;
-import java.util.Map;
+import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfigurationBuilder;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess} instances.
@@ -110,15 +113,18 @@ public class ConfigAccessBuilder implements Builder<urn.ietf.params.xml.ns.yang.
         return new ConfigAccessImpl(this);
     }
 
-    private static final class ConfigAccessImpl implements ConfigAccess {
+    public static final class ConfigAccessImpl implements ConfigAccess {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess.class;
         }
-
+        
+        @JsonProperty("mgmt-ip-address")
         private final IpAddress _mgmtIpAddress;
+        @JsonProperty("password")        
         private final java.lang.String _password;
+        @JsonProperty("username")        
         private final java.lang.String _username;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration.ConfigAccess>> augmentation = Collections.emptyMap();
@@ -138,6 +144,10 @@ public class ConfigAccessBuilder implements Builder<urn.ietf.params.xml.ns.yang.
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public ConfigAccessImpl() {
+        	this( new ConfigAccessBuilder());
         }
 
         @Override

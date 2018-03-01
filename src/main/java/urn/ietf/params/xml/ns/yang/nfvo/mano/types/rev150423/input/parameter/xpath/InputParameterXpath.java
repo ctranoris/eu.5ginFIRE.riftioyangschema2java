@@ -1,8 +1,8 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.input.parameter.xpath;
-import org.opendaylight.yangtools.yang.binding.ChildOf;
-import org.opendaylight.yangtools.yang.common.QName;
 import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.binding.Identifiable;
+import org.opendaylight.yangtools.yang.common.QName;
 
 /**
  * List of xpaths to parameters inside the NSD the can be customized during the 

@@ -1,12 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.action.param;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.Uri;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.HttpMethod;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of action parameters to control VNF

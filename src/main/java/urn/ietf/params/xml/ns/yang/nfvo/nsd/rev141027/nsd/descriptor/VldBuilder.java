@@ -1,26 +1,23 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
-
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VirtualLinkType;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.provider.network.ProviderNetwork;
-import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.catalog.NsdBuilder;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vld.InitParams;
 import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vld.VnfdConnectionPointRef;
-
-import java.util.Objects;
-import java.math.BigInteger;
-
-import org.codehaus.jackson.annotate.JsonProperty;
-
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld} instances.
@@ -330,6 +327,7 @@ public class VldBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
             return urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.Vld.class;
         }
 
+        @JsonProperty("description")
         private final java.lang.String _description;
         @JsonProperty("id")
         private final java.lang.String _id;
@@ -344,7 +342,9 @@ public class VldBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.nsd.
         private final java.lang.String _shortName;
         @JsonProperty("type")
         private final VirtualLinkType _type;
+        @JsonProperty("vendor")
         private final java.lang.String _vendor;
+        @JsonProperty("version")
         private final java.lang.String _version;        
         @JsonProperty("vnfd-connection-point-ref")
         private final List<VnfdConnectionPointRef> _vnfdConnectionPointRef = new ArrayList<VnfdConnectionPointRef>();

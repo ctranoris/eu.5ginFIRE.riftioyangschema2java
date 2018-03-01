@@ -1,8 +1,10 @@
 package urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
-import com.google.common.base.Preconditions;
+import java.io.Serializable;
 import java.util.Objects;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Preconditions;
 
 /**
  * The port-number type represents a 16-bit port number of an
@@ -20,7 +22,10 @@ import java.util.Objects;
 public class PortNumber
  implements Serializable {
     private static final long serialVersionUID = -5341082755708920855L;
-    private final java.lang.Integer _value;
+    
+
+    @JsonProperty("value")        
+    private final java.lang.String _value;
 
     private static void check_valueRange(final int value) {
         if (value >= 0 && value <= 65535) {
@@ -29,8 +34,19 @@ public class PortNumber
         throw new IllegalArgumentException(String.format("Invalid range: %s, expected: [[0..65535]].", value));
     }
 
-    @ConstructorProperties("value")
-    public PortNumber(java.lang.Integer _value) {
+
+    public PortNumber() {
+    	_value = "";
+    }
+    public PortNumber(java.lang.Integer v) {
+    	this._value = v+"";
+    }
+    //@ConstructorProperties("value")
+    public PortNumber(String v) {
+    	
+    	java.lang.Integer _value = java.lang.Integer.valueOf( v );
+    	
+    	
         if (_value != null) {
             check_valueRange(_value);
             }
@@ -39,7 +55,7 @@ public class PortNumber
         Preconditions.checkNotNull(_value, "Supplied value may not be null");
     
     
-        this._value = _value;
+        this._value = v;
     }
     
     /**
@@ -47,15 +63,15 @@ public class PortNumber
      *
      * @param source Source object
      */
-    public PortNumber(PortNumber source) {
-        this._value = source._value;
-    }
+//    public PortNumber(PortNumber source) {
+//        this._value = source._value;
+//    }
 
     public static PortNumber getDefaultInstance(String defaultValue) {
-        return new PortNumber(java.lang.Integer.valueOf(defaultValue));
+        return new PortNumber( defaultValue );
     }
 
-    public java.lang.Integer getValue() {
+    public java.lang.String getValue() {
         return _value;
     }
 

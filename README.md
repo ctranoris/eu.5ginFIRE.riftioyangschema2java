@@ -2,8 +2,10 @@
 
 This project contains the OSM API model in Java, based on the RIFT.IO YANG model.
 The Java objects were automatically created with `mvn generate-sources` into target/generated-sources and then copied to src/main/java.
-The code is enhanced with JSON annotations and other functionally in order to be properly parsed 
-Therefore any future changes to YANG model should be carefuly migrated
+
+WARNING:
+The code is enhanced with JSON annotations and other functionally in order to be properly parsed. This is work in progress since there are a lot of objects to be annotated as needed.  
+Therefore any future changes to YANG model should be carefuly migrated.
 
 Licenses
 --------

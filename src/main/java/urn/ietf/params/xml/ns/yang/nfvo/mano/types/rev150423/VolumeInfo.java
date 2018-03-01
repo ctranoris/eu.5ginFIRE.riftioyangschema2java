@@ -1,10 +1,10 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423;
+import java.math.BigInteger;
+
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.volume.info.VolumeSource;
-
-import java.math.BigInteger;
 
 /**
  * Grouping for Volume-info

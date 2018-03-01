@@ -1,12 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnffgd.rev141027.vnffgd.catalog;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715.Uuid;
 import urn.ietf.params.xml.ns.yang.nfvo.vnffgd.rev141027.VnffgdCatalog;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>vnffgd</b>

@@ -1,11 +1,13 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.PortNumber;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParamsBuilder.DashboardParamsImpl;
 
 /**
  * Parameters for the VNF dashboard
@@ -31,6 +33,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.mgmt._interface.DashboardParamsBuilder
  *
  */
+@JsonDeserialize(as = DashboardParamsImpl.class)
 public interface DashboardParams
     extends
     ChildOf<MgmtInterface>,

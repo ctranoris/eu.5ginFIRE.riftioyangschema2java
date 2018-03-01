@@ -1,17 +1,20 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
+import java.math.BigInteger;
+import java.util.List;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ProviderNetwork;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VirtualLinkType;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVldBuilder.InternalVldImpl;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.InitParams;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.internal.vld.InternalConnectionPoint;
-
-import java.math.BigInteger;
-import java.util.List;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of Internal Virtual Link Descriptors (VLD). The internal VLD describes the 
@@ -83,6 +86,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVldKey
  *
  */
+@JsonDeserialize(as = InternalVldImpl.class)
 public interface InternalVld
     extends
     ChildOf<VnfdDescriptor>,

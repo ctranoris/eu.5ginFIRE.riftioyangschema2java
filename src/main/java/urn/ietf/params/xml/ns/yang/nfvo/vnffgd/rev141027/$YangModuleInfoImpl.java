@@ -1,10 +1,12 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnffgd.rev141027 ;
-import org.opendaylight.yangtools.yang.binding.YangModuleInfo;
-import java.util.Set;
-import java.util.HashSet;
-import com.google.common.collect.ImmutableSet;
-import java.io.InputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashSet;
+import java.util.Set;
+
+import org.opendaylight.yangtools.yang.binding.YangModuleInfo;
+
+import com.google.common.collect.ImmutableSet;
 public final class $YangModuleInfoImpl implements YangModuleInfo {
 
     private static final YangModuleInfo INSTANCE = new $YangModuleInfoImpl();

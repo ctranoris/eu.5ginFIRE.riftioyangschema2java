@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.guest.epa.guest.epa.numa.policy.numa.aware.numa.node.policy.node.om.numa.type.paired.threads.paired.threads;
-import org.opendaylight.yangtools.yang.binding.Identifier;
 import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class PairedThreadIdsKey
  implements Identifier<PairedThreadIds> {

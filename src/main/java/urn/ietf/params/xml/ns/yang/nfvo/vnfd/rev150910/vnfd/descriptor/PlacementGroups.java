@@ -1,15 +1,17 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
-import org.opendaylight.yangtools.yang.binding.ChildOf;
-import org.opendaylight.yangtools.yang.common.QName;
-
-import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInfo;
-import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
-import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus;
-
 import java.util.List;
 
 import org.opendaylight.yangtools.yang.binding.Augmentable;
+import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.binding.Identifiable;
+import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.PlacementGroupInfo;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroupsBuilder.PlacementGroupsImpl;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.placement.groups.MemberVdus;
 
 /**
  * List of placement groups at VNF level
@@ -44,6 +46,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroupsKey
  *
  */
+@JsonDeserialize(as = PlacementGroupsImpl.class)
 public interface PlacementGroups
     extends
     ChildOf<VnfdDescriptor>,

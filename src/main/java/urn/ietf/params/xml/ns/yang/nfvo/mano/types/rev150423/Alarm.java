@@ -1,10 +1,10 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423;
+import java.math.BigDecimal;
+
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.alarm.Actions;
-
-import java.math.BigDecimal;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>

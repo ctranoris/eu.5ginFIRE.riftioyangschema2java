@@ -1,13 +1,21 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog;
-import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
+import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.list.IpProfiles;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor.ServiceFunctionChain;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld;
@@ -15,11 +23,6 @@ import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInter
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.Vdu;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduDependency;
-
-import java.util.Objects;
-import java.util.List;
-import java.util.Collections;
-import java.util.Map;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd} instances.
@@ -47,6 +50,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
     private java.lang.String _vendor;
     private java.lang.String _version;
     private VnfConfiguration _vnfConfiguration;
+    private List<MonitoringParam> _monitoringParam;
 
     Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> augmentation = Collections.emptyMap();
 
@@ -70,6 +74,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         this._placementGroups = arg.getPlacementGroups();
         this._ipProfiles = arg.getIpProfiles();
         this._vnfConfiguration = arg.getVnfConfiguration();
+        this._monitoringParam = arg.getMonitoringParam();
     }
     public VnfdBuilder(urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileList arg) {
         this._ipProfiles = arg.getIpProfiles();
@@ -155,6 +160,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             this._serviceFunctionChain = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getServiceFunctionChain();
             this._serviceFunctionType = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getServiceFunctionType();
             this._placementGroups = ((urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VnfdDescriptor)arg).getPlacementGroups();
+            this._monitoringParam = ((urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.NsdDescriptor)arg).getMonitoringParam();
             isValidArg = true;
         }
         if (!isValidArg) {
@@ -164,7 +170,18 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             );
         }
     }
+    
+    
+    public List<MonitoringParam> getMonitoringParam() {
+        return _monitoringParam;
+    }
 
+    public VnfdBuilder setMonitoringParam(final List<MonitoringParam> value) {
+        this._monitoringParam = value;
+        return this;
+    }
+    
+    
     public List<ConnectionPoint> getConnectionPoint() {
         return _connectionPoint;
     }
@@ -378,31 +395,46 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
         return new VnfdImpl(this);
     }
 
-    private static final class VnfdImpl implements Vnfd {
+    public static final class VnfdImpl implements Vnfd {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd.class;
         }
 
-        private final List<ConnectionPoint> _connectionPoint;
+        @JsonProperty("connection-point")
+        private final List<ConnectionPoint> _connectionPoint  = new ArrayList<ConnectionPoint>();  
+        @JsonProperty("description")
         private final java.lang.String _description;
+        @JsonProperty("id")
         private final java.lang.String _id;
-        private final List<InternalVld> _internalVld;
+        private final List<InternalVld> _internalVld  = new ArrayList<InternalVld>(); 
         private final List<IpProfiles> _ipProfiles;
         private final VnfdKey _key;
+        @JsonProperty("logo")
         private final java.lang.String _logo;
+        @JsonProperty("mgmt-interface")        
         private final MgmtInterface _mgmtInterface;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("placement-groups")
         private final List<PlacementGroups> _placementGroups;
+        @JsonProperty("service-function-chain")
         private final ServiceFunctionChain _serviceFunctionChain;
         private final java.lang.String _serviceFunctionType;
+        @JsonProperty("short-name")
         private final java.lang.String _shortName;
-        private final List<Vdu> _vdu;
+        @JsonProperty("vdu")
+        private final List<Vdu> _vdu = new ArrayList<Vdu>();  
         private final List<VduDependency> _vduDependency;
+        @JsonProperty("vendor")
         private final java.lang.String _vendor;
+        @JsonProperty("version")
         private final java.lang.String _version;
+        @JsonProperty("vnf-configuration")
         private final VnfConfiguration _vnfConfiguration;
+        @JsonProperty("monitoring-param")
+        private final List<MonitoringParam> _monitoringParam;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> augmentation = Collections.emptyMap();
 
@@ -416,9 +448,9 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
                 this._key = base.getKey();
                 this._id = _key.getId();
             }
-            this._connectionPoint = base.getConnectionPoint();
+//            this._connectionPoint = base.getConnectionPoint();
             this._description = base.getDescription();
-            this._internalVld = base.getInternalVld();
+//            this._internalVld = base.getInternalVld();
             this._ipProfiles = base.getIpProfiles();
             this._logo = base.getLogo();
             this._mgmtInterface = base.getMgmtInterface();
@@ -427,7 +459,8 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             this._serviceFunctionChain = base.getServiceFunctionChain();
             this._serviceFunctionType = base.getServiceFunctionType();
             this._shortName = base.getShortName();
-            this._vdu = base.getVdu();
+            this._monitoringParam = base.getMonitoringParam();
+//            this._vdu = base.getVdu();
             this._vduDependency = base.getVduDependency();
             this._vendor = base.getVendor();
             this._version = base.getVersion();
@@ -443,6 +476,10 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public VnfdImpl(){
+        	this( new VnfdBuilder() );
         }
 
         @Override
@@ -535,6 +572,11 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             return _vnfConfiguration;
         }
         
+        @Override
+        public List<MonitoringParam> getMonitoringParam() {
+            return _monitoringParam;
+        }
+        
         @SuppressWarnings("unchecked")
         @Override
         public <E extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.catalog.Vnfd>> E getAugmentation(java.lang.Class<E> augmentationType) {
@@ -574,6 +616,7 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             result = prime * result + Objects.hashCode(_version);
             result = prime * result + Objects.hashCode(_vnfConfiguration);
             result = prime * result + Objects.hashCode(augmentation);
+            result = prime * result + Objects.hashCode(_monitoringParam);
         
             hash = result;
             hashValid = true;
@@ -605,6 +648,9 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
                 return false;
             }
             if (!Objects.equals(_ipProfiles, other.getIpProfiles())) {
+                return false;
+            }
+            if (!Objects.equals(_monitoringParam, other.getMonitoringParam())) {
                 return false;
             }
             if (!Objects.equals(_key, other.getKey())) {
@@ -689,6 +735,11 @@ public class VnfdBuilder implements Builder<urn.ietf.params.xml.ns.yang.nfvo.vnf
             if (_internalVld != null) {
                 builder.append("_internalVld=");
                 builder.append(_internalVld);
+                builder.append(", ");
+            }
+            if (_monitoringParam != null) {
+                builder.append("_monitoringParam=");
+                builder.append(_monitoringParam);
                 builder.append(", ");
             }
             if (_ipProfiles != null) {

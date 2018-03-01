@@ -1,7 +1,8 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423;
+import java.util.List;
+
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
-import java.util.List;
 
 /**
  * List of input parameters that can be specified when instantiating a network 

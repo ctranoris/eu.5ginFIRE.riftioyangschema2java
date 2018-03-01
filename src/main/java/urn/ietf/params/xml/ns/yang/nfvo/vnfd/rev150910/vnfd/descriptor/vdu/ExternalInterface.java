@@ -1,12 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VirtualInterface;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.Vdu;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterfaceBuilder.ExternalInterfaceImpl;
 
 /**
  * List of external interfaces for the VNF. The external interfaces enable sending 
@@ -44,6 +46,7 @@ import org.opendaylight.yangtools.yang.binding.Identifiable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.vdu.ExternalInterfaceKey
  *
  */
+@JsonDeserialize(as = ExternalInterfaceImpl.class)
 public interface ExternalInterface
     extends
     ChildOf<Vdu>,

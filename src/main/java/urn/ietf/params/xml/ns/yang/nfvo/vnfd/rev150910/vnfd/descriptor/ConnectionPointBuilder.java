@@ -1,15 +1,17 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
-import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ConnectionPointType;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-import java.util.Objects;
-import java.util.Collections;
-import java.util.Map;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ConnectionPointType;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint} instances.
@@ -186,18 +188,24 @@ public class ConnectionPointBuilder implements Builder<urn.ietf.params.xml.ns.ya
         return new ConnectionPointImpl(this);
     }
 
-    private static final class ConnectionPointImpl implements ConnectionPoint {
+    public static final class ConnectionPointImpl implements ConnectionPoint {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint.class;
         }
 
+        @JsonProperty("id")
         private final java.lang.String _id;
+        @JsonProperty("key")
         private final ConnectionPointKey _key;
+        @JsonProperty("name")
         private final java.lang.String _name;
+        @JsonProperty("short-name")
         private final java.lang.String _shortName;
+        @JsonProperty("type")
         private final ConnectionPointType _type;
+        @JsonProperty("port-security-enabled")
         private final java.lang.Boolean _portSecurityEnabled;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint>> augmentation = Collections.emptyMap();
@@ -227,6 +235,10 @@ public class ConnectionPointBuilder implements Builder<urn.ietf.params.xml.ns.ya
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public ConnectionPointImpl(){
+        	this( new ConnectionPointBuilder() );
         }
 
         @Override

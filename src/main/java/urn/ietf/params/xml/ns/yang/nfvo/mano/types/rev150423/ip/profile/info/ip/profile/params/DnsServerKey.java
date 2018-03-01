@@ -1,9 +1,9 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ip.profile.info.ip.profile.params;
+import java.util.Objects;
+
 import org.opendaylight.yangtools.yang.binding.Identifier;
 
 import urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715.IpAddress;
-
-import java.util.Objects;
 
 public class DnsServerKey
  implements Identifier<DnsServer> {

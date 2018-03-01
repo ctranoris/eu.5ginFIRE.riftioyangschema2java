@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.ietf.inet.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
+import java.io.Serializable;
+
 import com.google.common.base.Preconditions;
 
 /**

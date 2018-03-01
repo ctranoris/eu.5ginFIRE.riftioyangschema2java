@@ -1,12 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.host.epa;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
+import org.opendaylight.yangtools.yang.binding.Identifiable;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.CpuFeatureType;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.host.epa.HostEpa;
-
-import org.opendaylight.yangtools.yang.binding.Augmentable;
-import org.opendaylight.yangtools.yang.binding.Identifiable;
 
 /**
  * List of CPU features.

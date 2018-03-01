@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.vnffgd.classifier;
-import org.opendaylight.yangtools.yang.binding.Identifier;
 import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class MatchAttributesKey
  implements Identifier<MatchAttributes> {

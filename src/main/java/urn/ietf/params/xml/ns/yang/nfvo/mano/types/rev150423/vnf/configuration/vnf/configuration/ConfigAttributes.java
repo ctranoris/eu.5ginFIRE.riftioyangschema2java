@@ -1,11 +1,11 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.vnf.configuration;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.vnf.configuration.VnfConfiguration;
-
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
 
 /**
  * Miscellaneous input parameters to be considered while processing the NSD to 

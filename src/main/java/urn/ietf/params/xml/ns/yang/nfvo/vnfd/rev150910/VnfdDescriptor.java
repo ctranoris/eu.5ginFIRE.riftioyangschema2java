@@ -1,17 +1,18 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910;
+import java.util.List;
+
 import org.opendaylight.yangtools.yang.binding.DataObject;
 import org.opendaylight.yangtools.yang.common.QName;
 
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.IpProfileList;
 import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.VnfConfiguration;
+import urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor.MonitoringParam;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.ConnectionPoint;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.InternalVld;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.MgmtInterface;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.PlacementGroups;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.Vdu;
 import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.vnfd.descriptor.VduDependency;
-
-import java.util.List;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>vnfd</b>
@@ -910,6 +911,16 @@ public interface VnfdDescriptor
      * @return <code>java.util.List</code> <code>placementGroups</code>, or <code>null</code> if not present
      */
     List<PlacementGroups> getPlacementGroups();
+    
+    
+    /**
+     * List of monitoring parameters from VNFs that should be propogated up into NSR
+     *
+     *
+     *
+     * @return <code>java.util.List</code> <code>monitoringParam</code>, or <code>null</code> if not present
+     */
+    List<MonitoringParam> getMonitoringParam();
 
 }
 

@@ -1,10 +1,12 @@
 package urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.supplemental.boot.data;
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
 
-import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ConfigFile;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
-import org.opendaylight.yangtools.yang.binding.Augmentable;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.ConfigFile;
+import urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.supplemental.boot.data.SupplementalBootDataBuilder.SupplementalBootDataImpl;
 
 /**
  * <p>This class represents the following YANG schema fragment defined in module <b>mano-types</b>
@@ -32,6 +34,8 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.supplemental.boot.data.SupplementalBootDataBuilder
  *
  */
+
+@JsonDeserialize(as = SupplementalBootDataImpl.class)
 public interface SupplementalBootData
     extends
     ChildOf<urn.ietf.params.xml.ns.yang.nfvo.mano.types.rev150423.SupplementalBootData>,

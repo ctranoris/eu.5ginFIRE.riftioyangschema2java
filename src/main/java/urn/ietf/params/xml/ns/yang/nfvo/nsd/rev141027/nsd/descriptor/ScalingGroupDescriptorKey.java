@@ -1,6 +1,7 @@
 package urn.ietf.params.xml.ns.yang.nfvo.nsd.rev141027.nsd.descriptor;
-import org.opendaylight.yangtools.yang.binding.Identifier;
 import java.util.Objects;
+
+import org.opendaylight.yangtools.yang.binding.Identifier;
 
 public class ScalingGroupDescriptorKey
  implements Identifier<ScalingGroupDescriptor> {

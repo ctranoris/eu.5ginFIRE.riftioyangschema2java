@@ -1,16 +1,18 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface;
+import java.math.BigInteger;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+import org.opendaylight.yangtools.concepts.Builder;
 import org.opendaylight.yangtools.yang.binding.Augmentation;
 import org.opendaylight.yangtools.yang.binding.AugmentationHolder;
 import org.opendaylight.yangtools.yang.binding.DataObject;
 
-import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface.Type;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.HashMap;
-import org.opendaylight.yangtools.concepts.Builder;
-import java.util.Objects;
-import java.math.BigInteger;
-import java.util.Collections;
-import java.util.Map;
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface.Type;
 
 /**
  * Class that builds {@link urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface} instances.
@@ -130,15 +132,18 @@ public class VirtualInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.y
         return new VirtualInterfaceImpl(this);
     }
 
-    private static final class VirtualInterfaceImpl implements VirtualInterface {
+    public static final class VirtualInterfaceImpl implements VirtualInterface {
 
         @Override
         public java.lang.Class<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface> getImplementedInterface() {
             return urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface.class;
         }
 
+        @JsonProperty("bandwidth")
         private final BigInteger _bandwidth;
+        @JsonProperty("type")
         private final Type _type;
+        @JsonProperty("vpci")
         private final java.lang.String _vpci;
 
         private Map<java.lang.Class<? extends Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface>>, Augmentation<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterface>> augmentation = Collections.emptyMap();
@@ -158,6 +163,10 @@ public class VirtualInterfaceBuilder implements Builder<urn.ietf.params.xml.ns.y
             default :
                 this.augmentation = new HashMap<>(base.augmentation);
             }
+        }
+        
+        public VirtualInterfaceImpl(){
+        	this( new VirtualInterfaceBuilder() );
         }
 
         @Override

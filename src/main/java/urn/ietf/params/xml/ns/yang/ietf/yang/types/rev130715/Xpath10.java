@@ -1,8 +1,9 @@
 package urn.ietf.params.xml.ns.yang.ietf.yang.types.rev130715;
-import java.io.Serializable;
 import java.beans.ConstructorProperties;
-import com.google.common.base.Preconditions;
+import java.io.Serializable;
 import java.util.Objects;
+
+import com.google.common.base.Preconditions;
 
 /**
  * This type represents an XPATH 1.0 expression.

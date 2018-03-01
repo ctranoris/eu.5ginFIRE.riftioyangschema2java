@@ -1,8 +1,14 @@
 package urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface;
+import java.math.BigInteger;
+
+import org.opendaylight.yangtools.yang.binding.Augmentable;
 import org.opendaylight.yangtools.yang.binding.ChildOf;
 import org.opendaylight.yangtools.yang.common.QName;
-import java.math.BigInteger;
-import org.opendaylight.yangtools.yang.binding.Augmentable;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
+import urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterfaceBuilder.VirtualInterfaceImpl;
 
 /**
  * Container for the virtual interface properties
@@ -28,6 +34,7 @@ import org.opendaylight.yangtools.yang.binding.Augmentable;
  * @see urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.virtual._interface.VirtualInterfaceBuilder
  *
  */
+@JsonDeserialize(as = VirtualInterfaceImpl.class)
 public interface VirtualInterface
     extends
     ChildOf<urn.ietf.params.xml.ns.yang.nfvo.vnfd.rev150910.VirtualInterface>,
@@ -50,7 +57,7 @@ public interface VirtualInterface
         
         PCNET(6, "PCNET")
         ;
-    
+
         private static final java.util.Map<java.lang.Integer, Type> VALUE_MAP;
     
         static {
@@ -58,7 +65,7 @@ public interface VirtualInterface
             for (Type enumItem : Type.values()) {
                 b.put(enumItem.value, enumItem);
             }
-    
+
             VALUE_MAP = b.build();
         }
     
@@ -87,11 +94,29 @@ public interface VirtualInterface
         }
     
         /**
+        * enhancement for JSON parsing
+        */
+        private static final java.util.Map<String, Type> NAMES_MAP;
+        static {
+            final com.google.common.collect.ImmutableMap.Builder<String, Type> s = com.google.common.collect.ImmutableMap.builder();
+            for (Type enumItem : Type.values()) {
+                s.put(enumItem.name, enumItem);
+            }
+
+            NAMES_MAP = s.build();
+        }
+        /**
          * @param valueArg integer value
          * @return corresponding Type item
          */
         public static Type forValue(int valueArg) {
             return VALUE_MAP.get(valueArg);
+        }
+        
+        
+        @JsonCreator // This is the factory method and must be static
+        public static Type fromString(String valueArg) {
+            return NAMES_MAP.get(valueArg);
         }
     }
 
